@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block title %}Расписание{% endblock %}
+
+{% block content %}
+<div class="container">
+	<h4>{{ user.profile.group }}</h4>
+	<table class="table table-bordered">
+		<tr>
+			<th>Время</th>
+			<th>Понедельник</th>
+			<th>Вторник</th>
+			<th>Среда</th>
+			<th>Четверг</th>
+			<th>Пятница</th>
+			<th>Суббота</th>
+			<th>Воскресенье</th>
+		</tr>
+		{% for el in timetable %}
+		{% if el.group == user.profile.group %}
+		<tr>
+			<td>{{ el.time }}</td>
+			<td>{{ el.monday }}</td>
+			<td>{{ el.tuesday }}</td>
+			<td>{{ el.wednesday }}</td>
+			<td>{{ el.thursday }}</td>
+			<td>{{ el.friday }}</td>
+			<td>{{ el.saturday }}</td>
+			<td>{{ el.sunday }}</td>
+		</tr>
+		{% endif %}
+		{% endfor %}
+	</table>
+
+</div>
+{% endblock %}
+

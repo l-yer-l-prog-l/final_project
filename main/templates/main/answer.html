@@ -1,0 +1,14 @@
+{% extends 'main/main.html' %}
+
+{% block title %}Добавить ответ{% endblock %}
+
+{% block content %}
+<div class="container">
+	 <h4>Новый ответ:</h4>
+    <form method="POST">
+        {{ answer_form.as_p }}
+		{% csrf_token %}
+        <button type="submit" class="save btn btn-success">Save</button>
+    </form>
+</div>
+{% endblock %}

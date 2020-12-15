@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load has_group %}
+{% block content %}
+<div class="container">
+	<h3>Ваши данные</h3>
+	<ul class="nav flex-column">
+		<li class="nav-item">
+			<h5>Имя: {{ user.username }}</h5>
+		</li>
+		<li class="nav-item">
+			<h5>Электронная почта: {{ user.email }}</h5>
+		</li>
+		<li class="nav-item">
+			<form action="{% url 'teacher_rating' user.id %}" method="POST" class="post-form">
+				{% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+		</li>
+	</ul>
+</div>
+{% endblock %}

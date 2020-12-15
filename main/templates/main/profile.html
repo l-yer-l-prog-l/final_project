@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+	<div class="container">
+		<h3>User: {{ user.username }}</h3>
+		<h5>Email: {{ user.email }}</h5>
+		<h5>Bio: {{ user.profile.bio }}</h5>
+		<h5>Date of birth: {{ user.profile.birth_date }}</h5>
+		<h5>Group: {{ user.profile.group }}</h5>
+	</div>
+	<div class="container">
+		<a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
+	</div>
+</div>
+{% endblock %}

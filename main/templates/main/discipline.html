@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container">
+		<h4>Уроки:</h4>
+		<ul class="nav flex-column">
+			{% for discipline in discipline_list %}
+			<li class="nav-item">
+				{% if not discipline.title == "Нету урока" %}
+				<h6>{{ discipline.title }}</h6>
+				{% endif %}
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

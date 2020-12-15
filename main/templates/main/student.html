@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<div class="container col-6 mx-auto shadow mt-3">
+		<h3>Выберите свое имя пожалуйста:</h3>
+		<ul class="nav flex-column">
+			{% for student in students_list %}
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'students_open' pk=student.pk %}">
+						{{ student.name }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Все задания{% endblock %}
+
+{% block content %}
+	<div class="container col-6 mx-auto shadow m-4">
+		<h3>Все задания</h3>
+		<ul class="nav flex-column">
+			{% for task in tasks %}
+				<li class="nav-item">
+					<div class="container border mb-3">
+						<h5 class="mt-2">{{ task.title }}</h5>
+						<p>{{ task.description }}</p>
+						<p>Урок:  {{ task.discipline }}</p>
+						<p>Дата начало: {{ task.date_of_start }}</p>
+						<p>Дедлайн: {{ task.date_of_finish }}</p>
+						<a class="btn btn-success mb-2" href="{% url 'answer' %}">Добавить ответ</a>
+					</div>
+				</li>
+			{% endfor %}
+		</ul>
+		{% include "main/pagination.html" with page=tasks %}
+	</div>
+{% endblock %}

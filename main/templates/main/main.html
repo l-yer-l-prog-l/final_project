@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load has_group %}
+<div class="container">
+	<h3>Что хотите сделать?</h3>
+	{% if request.user|has_group:"Students" %}
+	<a class="btn btn-info" href="{% url 'task' %}">Добавить ответ</a>
+	<a class="btn btn-info">Посмотреть оценку</a>
+	{% endif %}
+	{% if request.user|has_group:"Teachers" %}
+	<h3></h3>
+	<a class="btn btn-info">Добавить задание</a>
+	<a class="btn btn-info">Поставить оценку</a>
+	<a class="btn btn-info">Посмотреть отзывы</a>
+	{% endif %}
+</div>
+{% endblock %}

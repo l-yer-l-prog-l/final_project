@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container col-6 mx-auto shadow mt-3 p-2">
+		<h3>Ваши данные</h3>
+		<ul class="nav flex-column">
+			<li class="nav-item">
+				<h5>Имя: {{ teacher.name }}</h5>
+			</li>
+			<li class="nav-item">
+				<h5>Электронная почта: {{ teacher.email }}</h5>
+			</li>
+			<li class="nav-item">
+				<h5>Дата рождения: {{ teacher.date_of_birth }}</h5>
+			</li>
+		</ul>
+		<h3>Действия</h3>
+		<a href="" class="btn btn-info m-2" role="button">Добавить задание</a>
+		<a href="" class="btn btn-info m-2" role="button">Посмотреть ответы</a>
+		<a href="" class="btn btn-info m-2" role="button">Поставить оценку</a>
+	</div>
+</body>
+</html>
