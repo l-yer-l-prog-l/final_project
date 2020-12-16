@@ -26,7 +26,7 @@ SECRET_KEY = 'hy0d**=$^p=p31*^&rhnz(99%_gc0u1o359964qbc1%su!a+cd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pacific-tor-60681.herokuapp.com']
 
 
 # Application definition
